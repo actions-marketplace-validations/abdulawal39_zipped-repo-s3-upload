@@ -1,4 +1,4 @@
-name: Deploy Zipped Directory to S3
+name: Upload Zipped Directory to S3
 on:
   push:
     tags:
@@ -17,8 +17,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install awscli
       - name: Create new directory and move files
-        run: |
+        run: >
           mkdir your-directory-name
+
           mv * your-directory-name/ || true  # Ignore the error when trying to move the newly created directory into itself
       - name: Archive code
         run: zip -r your-zip-file-name.zip your-directory-name/
