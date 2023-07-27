@@ -1,4 +1,9 @@
 name: Upload Zipped Directory to S3
+description: "A github action to copy the repo files inside a directory, zip that directory and upload to specified s3 bucket on every tag creation."
+author: abdulawal39
+branding:
+  icon: upload-cloud
+  color: purple
 on:
   push:
     tags:
